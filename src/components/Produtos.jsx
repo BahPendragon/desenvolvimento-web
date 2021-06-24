@@ -189,6 +189,8 @@ function Produtos() {
               </Grid>
             </Paper>
           </Grid>
+        </Grid>
+        <Grid container spacing={3}>
           <Grid item xs={3}>
             {/* Charmander */}
             <Paper className={classes.paper}>
