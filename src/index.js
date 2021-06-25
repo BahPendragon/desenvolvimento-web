@@ -26,7 +26,7 @@ const theme = createMuiTheme({
   ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-        <ThemeProvider theme= {theme}>
+        <ThemeProvider theme={theme}>
             <Switch>
                 <Route path="/" exact={true} component={Home} />
                 <Route path="/home" component={Home} />

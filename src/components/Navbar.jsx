@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTheme } from 'styled-components';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, IconButton, Typography, InputBase, Badge, MenuItem, Menu, Box, Grid } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
@@ -71,8 +72,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+function NavBar () {
   const classes = useStyles();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -156,68 +158,69 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
         <Toolbar>
-          <IconButton
+            <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
-          >
+            >
             <img src="https://img.icons8.com/color/48/000000/ultra-ball.png" alt="Icon" />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
+            </IconButton>
+            <Typography className={classes.title} variant="h6" noWrap>
             Serratec Dex
-          </Typography>
-          <div className={classes.search}>
+            </Typography>
+            <div className={classes.search}>
             <div className={classes.searchIcon}>
-              <SearchIcon />
+                <SearchIcon />
             </div>
             <InputBase
-              placeholder="Buscar…"
-              classes={{
+                placeholder="Buscar…"
+                classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
+                }}
+                inputProps={{ 'aria-label': 'search' }}
             />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
+            </div>
+            <div className={classes.grow} />
+            <div className={classes.sectionDesktop}>
             <IconButton aria-label="show new mails" color="inherit">
-              <Badge badgeContent={0} color="secondary">
+                <Badge badgeContent={0} color="secondary">
                 <ShoppingCartIcon />
-              </Badge>
+                </Badge>
             </IconButton>
             <IconButton aria-label="show new notifications" color="inherit">
-              <Badge badgeContent={0} color="secondary">
+                <Badge badgeContent={0} color="secondary">
                 <NotificationsIcon />
-              </Badge>
+                </Badge>
             </IconButton>
             <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
             >
-              <PersonIcon />
+                <PersonIcon />
             </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
+            </div>
+            <div className={classes.sectionMobile}>
             <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
             >
             <MoreIcon />
             </IconButton>
-          </div>
+            </div>
         </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-      </div>)}
+        {renderMobileMenu}
+        {renderMenu}
+    </div>);
+}
+
+export default NavBar;
