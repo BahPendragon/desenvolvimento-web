@@ -1,6 +1,8 @@
 import React from 'react';
 import { styled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import Typography from "@material-ui/core/Typography";
+import Navbar from './Navbar'
 
 const MyButton = styled(Button)({
   background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
@@ -8,10 +10,10 @@ const MyButton = styled(Button)({
   borderRadius: 3,
   boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   color: 'white',
-  height: 48,
+  height: 35,
   padding: '0 30px',
-});
 
+});
 
 
 function Formulario() {
@@ -21,15 +23,18 @@ function Formulario() {
       }
 
   return (
-    <div className="wrapper">
-      <h1>Quem é esse treinador Pokémon?</h1>
+    <div>
+      <Navbar/>
+      <br/>
+      <Typography variant="h4">Quem é este Treinador Pokémon?</Typography>
       <form onSubmit={handleSubmit}>
-      <fieldset>
+
          <label>
-           <h2>Nome</h2>
+         <Typography variant="h6">Nome</Typography>
            <input name="name" />
          </label>
-       </fieldset>
+       <br />
+       <br />
        <MyButton type="submit">Enviar</MyButton>
       </form>
     </div>

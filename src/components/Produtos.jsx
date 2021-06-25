@@ -10,6 +10,7 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import axios from 'axios';
 import CarrinhoElements from './CarrinhoElements';
 import Alert from "@material-ui/lab/Alert";
+import Navbar from './Navbar'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,7 +50,7 @@ function Produtos() {
   const addCarrinho = (pokemon) => {
     setCarrinho((anterior) => [...anterior, pokemon]);
     setAlerta(true);
-    axios.put(`http://localhost:8080/api/pedidos/8/produto/${pokemon}`);
+    axios.put(`http://localhost:8080/api/pedidos/9/produto/${pokemon}`);
   }
 
   React.useEffect(() => {
@@ -58,6 +59,7 @@ function Produtos() {
 
   return (
       <div>
+          <Navbar/>
           {alerta && (
           <Alert severity="success" variant="filled">
             Pokemon Adicionado com Sucesso!

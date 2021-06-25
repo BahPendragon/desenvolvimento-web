@@ -6,6 +6,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PersonIcon from '@material-ui/icons/Person';
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -108,8 +109,12 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
+      <a href="/formulario">
       <MenuItem onClick={handleMenuClose}>Minha Conta</MenuItem>
+      </a>
+      <a href="/produtos">
       <MenuItem onClick={handleMenuClose}>Pokedex</MenuItem>
+      </a>
     </Menu>
   );
 
@@ -125,7 +130,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show new mails" color="secondary">
+        <IconButton aria-label="show new mails" color="secondary" onClick={"/carrinho"}>
           <Badge badgeContent={0} color="secondary">
             <ShoppingCartIcon />
           </Badge>

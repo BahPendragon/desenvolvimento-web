@@ -8,6 +8,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Alert from "@material-ui/lab/Alert";
+import Navbar from './Navbar'
 
 const useStyles = makeStyles((theme) => ({
     
@@ -50,13 +51,13 @@ export default () => {
       }, []);
 
    const finalizarPedido = (pedido) =>{ 
-        axios.delete(`http://localhost:8080/api/pedidos/${pedido}`);
         setPedidos([]);
        setAlerta(true);
    }
 
       return (
           <div>
+            <Navbar/>
               <ul>
               {pedidos.map((pedido) =>(
                   <div>
@@ -94,13 +95,13 @@ export default () => {
             </Paper>
             </Grid>
                     ))}
-                    {pedido.valorTotal}
+                    VALOR DO PEDIDO: R${pedido.valorTotal},00
                     </div>
                     </div>
                    
                   ))}
               </ul>
-
+                    <Button onClick={finalizarPedido}>Finalizar Compra</Button>
                   {alerta && (
                     <Alert severity="success" variant="filled">
                     Compra Finalizada com Sucesso!

@@ -111,6 +111,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
       <MenuItem onClick={handleMenuClose}>Minha Conta</MenuItem>
       <MenuItem onClick={handleMenuClose}>Pokedex</MenuItem>
+      
     </Menu>
   );
 
@@ -186,6 +187,7 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show new mails" color="inherit">
+
               <Badge badgeContent={0} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
