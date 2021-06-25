@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
+import Footer from 'rc-footer';
+import 'rc-footer/assets/index.css'; // import 'rc-footer/asssets/index.less';
+import PrimarySearchAppBar from "./NavBar"
+
 
 const EstiloGeral = styled.div `
     font-family: Roboto, sans-serif;
@@ -10,7 +14,7 @@ const EstiloGeral = styled.div `
 `;
 
 const EstiloFooter = styled.footer `
-    background-color: #333;
+    background-color: #333333;
     text-align: center;
 `;
 
@@ -22,11 +26,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ContainedButtons() {
+export default function ContainedButtons(){
   const classes = useStyles();
 
   return (
     <>
+        <PrimarySearchAppBar />
         <EstiloGeral>
             <h1> 
                 Sobre nós.
@@ -41,35 +46,46 @@ export default function ContainedButtons() {
 
         <EstiloGeral>   
             <p> 
-                nós somos a SerratecPokedex, a maior vendedora de pokemons da américa
-                latina. <br/>com mais de <b>3 milhões</b> de pokemons vendidos 
-                <br/>e 22 anos de mercado, nossos clientes sempre contam com o melhor atendimento e a <br/>melhor 
-                qualidade, é claro. Possuimos lojas em todo o território nacional.<br/> 
-                Entrentando a nossa matriz se localiza no Rio de janeiro.<br/> Caso não
-                queira sair de casa nestes tempos de pandemia<br/> mas ainda assim tem
-                interesse em obter seu próprio pokemon <br/>nós do SerratecPokedex,
-                também entregamos em todo Brasil, <br/>Peça já o seu pelo numero: 
-                <b>(21) 98801-7825</b>.
+                Nós somos a <strong>SerratecPokedex</strong>, a maior vendedora de pokemons da américa
+                latina! <br/>Já passamos de <b>3 milhões</b> de pokemons vendidos. 
+                <br/>Juntos à 22 anos, proporcionando o melhor atendimento e qualidade para os nossos usuários, com lojas em todo o território nacional.<br /><br />
+                <br/> <em>Entregamos em todo o Brasil!</em> Você não precisa sair de casa para se divertir e ter o seu próprio Pokemon.<br/><strong>Peça já!</strong>                
             </p>
         </EstiloGeral>
 
         <EstiloGeral>
             <EstiloFooter>
-                CNPJ: 71.631.913/0001-54 || Inscrição Estadual: 39.347.47-4 <br/>
-                Data de abertura: 02/04/1999<br/>
-                Copyrights TODOS OS DIRETOS RESERVADOS AO SERRATECPOKEDEX<br/>
-                Endereço: Emanuel Franco, N° 538, Bairro: Campo Grande<br/> 
-                Cidade: Rio de Janeiro.<br/>
-                Email: serratecPokedex@contactus.com.br
-
-                <div className={classes.root}>
-                <Button variant="contained" color="primary" href="https://www.google.com/intl/pt/gmail/about/#">
-                    Contato
-                </Button>
-                </div>
-
+                <Footer
+                    columns={[
+                    {
+                        title: 'CNPJ: 71.631.913/0001-54 || Inscrição Estadual: 39.347.47-4',
+                    },
+                    {
+                        title: 'Data de abertura: 02/04/1999',
+                    },
+                    {
+                        title: 'Copyrights TODOS OS DIRETOS RESERVADOS AO SERRATECDEX',
+                    },
+                    {
+                        title: 'Endereço: Emanuel Franco, N° 538, Bairro: Campo Grande',
+                    },
+                    {
+                        title: 'Cidade: Rio de Janeiro',
+                    },
+                    {
+                        title: 'Email: serratecPokedex@exemplo.com',
+                    }
+                    ]}
+                    bottom={
+                        <div className={classes.root}>
+                        <Button variant="contained" color="primary" href="https://www.google.com/intl/pt/gmail/about/#">
+                        Contato
+                        </Button>
+                        </div>
+                    }
+                />
             </EstiloFooter>
         </EstiloGeral>
     </>
-  );
-}
+  )
+};
