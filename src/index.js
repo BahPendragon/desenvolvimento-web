@@ -7,6 +7,7 @@ import Sobre from './components/Sobre';
 import NotFound from './components/NotFound';
 import Produtos from './components/Produtos';
 import Carrinho from './components/Carrinho';
+import Formulario from './components/Formulario';
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 
@@ -30,6 +31,7 @@ const theme = createMuiTheme({
                 <Route path="/" exact={true} component={Home} />
                 <Route path="/home" component={Home} />
                 <Route path="/sobre" component={Sobre} />
+                <Route path="/formulario" component={Formulario} />
                 <Route path="/produtos" component={Produtos} />
                 <Route path="/carrinho" component={Carrinho} />
                 <Route path='*' component={NotFound} />
