@@ -87,5 +87,4 @@ export default function ContainedButtons(){
             </EstiloFooter>
         </EstiloGeral>
     </>
-  )
-};
+)};
