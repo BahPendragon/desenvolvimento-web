@@ -51,7 +51,7 @@ export default () => {
         axios.get("http://localhost:8080/api/pedidos").then((response) => {setPedidos(response.data); setId(response.data.id); console.log("Será?", id);});
       }, []);
 
-   const finalizarPedido = (pedido) =>{ 
+   const finalizarPedido = () =>{ 
         setPedidos([]);
        setAlerta(true);
    }
