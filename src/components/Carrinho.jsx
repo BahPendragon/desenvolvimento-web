@@ -8,7 +8,8 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Alert from "@material-ui/lab/Alert";
-import Navbar from './Navbar'
+import NavBar from './NavBar'
+import { AppBar } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     
@@ -57,7 +58,9 @@ export default () => {
 
       return (
           <div>
-            <Navbar/>
+            <AppBar position="static">
+            <NavBar/>
+            </AppBar>
               <ul>
               {pedidos.map((pedido) =>(
                   <div>

@@ -10,7 +10,8 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import axios from 'axios';
 import CarrinhoElements from './CarrinhoElements';
 import Alert from "@material-ui/lab/Alert";
-import Navbar from './Navbar'
+import NavBar from './NavBar'
+import { AppBar } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,7 +60,9 @@ function Produtos() {
 
   return (
       <div>
-          <Navbar/>
+        <AppBar position="static">
+          <NavBar/>
+          </AppBar>
           {alerta && (
           <Alert severity="success" variant="filled">
             Pokemon Adicionado com Sucesso!

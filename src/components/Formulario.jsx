@@ -2,7 +2,8 @@ import React from 'react';
 import { styled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from "@material-ui/core/Typography";
-import Navbar from './Navbar'
+import NavBar from './NavBar'
+import { AppBar } from '@material-ui/core';
 
 const MyButton = styled(Button)({
   background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
@@ -24,7 +25,9 @@ function Formulario() {
 
   return (
     <div>
-      <Navbar/>
+      <AppBar position="static">
+      <NavBar/>
+      </AppBar>
       <br/>
       <Typography variant="h4">Quem é este Treinador Pokémon?</Typography>
       <form onSubmit={handleSubmit}>
